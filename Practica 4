@@ -1,0 +1,29 @@
+Algoritmo practica4
+	Definir cad Como Caracter;
+	Definir espacios,palabras Como Entero;
+	palabras<-0;
+	espacios<-0;
+	Escribir "Introduce una cadena:";
+	Leer cad;
+	//Tengo en cuenta los posibles espacios que tenga la frase al principio
+	Mientras Subcadena(cad,espacios,espacios)=" " Hacer
+		espacios<-espacios+1;
+	FinMientras
+	
+	//Empieza desde el primer caracter distinto a un espacio
+	Para espacios<-espacios hasta Longitud(cad)-1 Hacer
+		Si Subcadena(cad,espacios,espacios)=" " Entonces
+			palabras<-palabras+1;
+			//No tengo en cuenta los posibles espacios que haya entre las palabras
+			Mientras Subcadena(cad,espacios,espacios)=" " Y espacios<=Longitud(cad) Hacer
+				espacios<-espacios+1;
+			FinMientras
+		FinSi
+	FinPara
+	
+	//Si no acaba en espacios tengo que contar la última palabra
+	Si subcadena(cad,Longitud(cad)-1,Longitud(cad)-1)<>" " Entonces
+		palabras<-palabras+1;
+	FinSi
+	Escribir "La frase tiene ",palabras," palabras.";
+FinAlgoritmo
