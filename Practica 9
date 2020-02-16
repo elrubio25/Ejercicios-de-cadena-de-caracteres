@@ -1,0 +1,23 @@
+Algoritmo practica9
+	Definir cad, subcad Como Caracter;
+	Definir num_subcadenas,nsubc Como Entero;
+	Definir indicador Como Logico;
+	indicador<-Falso;
+	Escribir "Introduce una cadena:";
+	Leer cad;
+	Escribir "Introduce una subcadena:";
+	Leer subcad;
+	//Debemos asegurarnos que la cadena contenga a la subcadena
+	//Restamos las longitudes de varias cadenas para poder repasar la principal y asegurarnos que ambas coinciden
+	num_subcadenas<- Longitud(cad)-Longitud(subcad)+1;
+	Para nsubc<-0 hasta num_subcadenas-1 Hacer
+		Si Subcadena(cad,nsubc,nsubc+Longitud(subcad)-1)=subcad Entonces
+			indicador<-Verdadero;
+		FinSi
+	FinPara
+	Si indicador Entonces
+		Escribir "La cadena contiene la subcadena.";
+	SiNo
+		Escribir "La cadena no contiene la subcadena.";
+	FinSi
+FinAlgoritmo
