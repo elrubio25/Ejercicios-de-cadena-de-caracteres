@@ -1,0 +1,20 @@
+Algoritmo practica3
+	Definir cad, car Como Caracter;
+	Definir cont Como Entero;
+	cont<-0
+	Escribir "Introducer una cadena";
+	leer cad
+	Repetir
+		Escribir "Introduce un carácter:";
+		Leer car;
+	//Recorremos toda la cadena en busca del caracter introducido
+	//Si el programa encuentra el mismo caracter se sumara al contador un 1
+	Hasta Que Longitud(car)=1;
+	Para posicion<-0 hasta Longitud(cad)-1 Hacer
+		Si Subcadena(cad,posicion,posicion)=car Entonces
+			cont<-cont+1;
+		FinSi
+	FinPara
+	Escribir "El caracter " ,car, " ha aparecido " ,cont, " veces en la cadena " ,cad ;
+FinAlgoritmo
+
