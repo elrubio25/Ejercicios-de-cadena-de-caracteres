@@ -1,0 +1,10 @@
+Algoritmo practica1
+	Definir cad Como Caracter
+	Definir posicion Como Entero
+	Escribir "Introduce una oracion o palabra"
+	leer cad
+	//Para dividir la cadena el programa debe recorrerla caracter por caracter
+	Para posicion<-0 hasta Longitud(cad) Hacer
+		Escribir subcadena(cad,posicion,posicion)
+	FinPara
+FinAlgoritmo
