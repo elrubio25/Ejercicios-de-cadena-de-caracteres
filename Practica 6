@@ -1,0 +1,12 @@
+Algoritmo practica6
+	Definir cad,invertida Como Caracter;
+	Definir car como Entero;
+	invertida<-"";
+	Escribir "Introduce una cadena:";
+	Leer cad;
+	//Para poder darle la vuelta el programa debe leerlo desde el primer caracter y concatenalo hasta que termine con la cadena
+	Para car<-Longitud(cad)-0 hasta 0 Con Paso -1 Hacer
+		invertida<-concatenar(invertida,Subcadena(cad,car,car));
+	FinPara
+	Escribir "La cadena invertida es: ",invertida;
+FinAlgoritmo
