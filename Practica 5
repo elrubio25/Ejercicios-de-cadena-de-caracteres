@@ -1,0 +1,33 @@
+Algoritmo practica5
+	Definir cad Como Caracter;
+	Definir posicion Como Entero;
+	Definir iniciales Como Caracter;
+	iniciales <-"";
+	posicion<-0;
+	Escribir Sin Saltar "Introduce una cadena:";
+	Leer cad;
+	//Me planteo si antes de la primera inicial hay espacios
+	Mientras Subcadena(cad,posicion,posicion)=" " Hacer
+		posicion<-posicion+1;
+	FinMientras
+	
+	//Debo tener en cuenta si antes de la primera incial hay espacios o no
+	si posicion=0
+		iniciales<-concatenar(iniciales,subcadena(cad,1,1));
+	SiNo
+		iniciales<-concatenar(iniciales,subcadena(cad,posicion,posicion));
+	finsi
+	
+	//Empiezo a contar las iniciales desde el primer caracter distinto a un espacio
+	Para posicion<-posicion hasta Longitud(cad)-1 Hacer
+		Si Subcadena(cad,posicion,posicion)=" " Entonces
+			//Voy contando los caracteres sin tener en cuenta los espacios
+			Mientras Subcadena(cad,posicion,posicion)=" " Y posicion<=Longitud(cad) Hacer
+				posicion<-posicion+1;
+			FinMientras
+			//La siguiente inical es la primera letra de la siguiente palabra
+			iniciales<-concatenar(iniciales,subcadena(cad,posicion,posicion));
+		FinSi
+	FinPara
+	Escribir "Iniciales:",Mayusculas(iniciales);
+FinAlgoritmo
