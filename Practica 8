@@ -1,0 +1,18 @@
+Algoritmo Pratica8
+	Definir cad,nuevacad Como Caracter;
+	Definir posicion Como Entero;
+	nuevacad<-"";
+	Escribir Sin Saltar "Introduce una cadena:";
+	Leer cad;
+	//El programa debe recorrer la cadena caracter por caracter
+	//Cuando encuentre una mayuscula la cambiara por minuscula y a la viceversa
+	Para posicion<-0 hasta Longitud(cad)-1 Hacer
+		Si Subcadena(cad,posicion,posicion)=Mayusculas(Subcadena(cad,posicion,posicion)) Entonces
+			nuevacad<-concatenar(newcad,Minusculas(Subcadena(cad,posicion,posicion)));
+		FinSi
+		Si Subcadena(cad,posicion,posicion)=Minusculas(Subcadena(cad,posicion,posicion)) Entonces
+			nuevacad<-concatenar(nuevacad,Mayusculas(Subcadena(cad,posicion,posicion)));
+		FinSi
+	FinPara
+	Escribir "La cadena convertida es: ",nuevacad;
+FinAlgoritmo
